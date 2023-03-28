@@ -1,6 +1,6 @@
 'use strict';
 
-/*
+
 ///////////////////////////////////////
 // Activating Strict Mode
 let hasDriversLicense = false;
@@ -135,7 +135,7 @@ HINT: To check if number A is at least double number B, check for A >= 2 * B. Ap
 GOOD LUCK 😀
 */
 
-/*
+
 const calcAverage = (a, b, c) => (a + b + c) / 3;
 console.log(calcAverage(3, 4, 5));
 
@@ -237,7 +237,7 @@ console.log(friends.includes(23));
 if (friends.includes('Steven')) {
   console.log('You have a friend called Steven');
 }
-*/
+
 
 ///////////////////////////////////////
 // Coding Challenge #2
@@ -257,7 +257,7 @@ HINT: Remember that an array needs a value in each position, and that value can 
 GOOD LUCK 😀
 */
 
-/*
+
 const calcTip = function (bill) {
   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 }
@@ -417,11 +417,10 @@ if (mark.bmi > john.bmi) {
 }
 
 
-///////////////////////////////////////
-// Iteration: The for Loop
+ Iteration: The for Loop
 
-// console.log('Lifting weights repetition 1 🏋️‍♀️');
-// console.log('Lifting weights repetition 2 🏋️‍♀️');
+ console.log('Lifting weights repetition 1 🏋️‍♀️');
+ console.log('Lifting weights repetition 2 🏋️‍♀️');
 // console.log('Lifting weights repetition 3 🏋️‍♀️');
 // console.log('Lifting weights repetition 4 🏋️‍♀️');
 // console.log('Lifting weights repetition 5 🏋️‍♀️');
@@ -435,9 +434,9 @@ if (mark.bmi > john.bmi) {
 for (let rep = 1; rep <= 30; rep++) {
   console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
 }
+ 
 
 
-///////////////////////////////////////
 // Looping Arrays, Breaking and Continuing
 const jonas = [
   'Jonas',
@@ -586,4 +585,3 @@ const calcAverage = function (arr) {
 console.log(calcAverage([2, 3, 7]));
 console.log(calcAverage(totals));
 console.log(calcAverage(tips));
-*/
