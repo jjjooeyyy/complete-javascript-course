@@ -24,10 +24,10 @@ const diceImg = [
 
 // Start Game 
 const startGame = function() {
-scores = [0,0];
-currentScore = 0;
-isPlaying = true;
-activePlayer = 0;
+scores = [0,0]; // store the total score of player1,2
+currentScore = 0; 
+isPlaying = true; 
+activePlayer = 0; // player1 start first by default
 
 playerScore0.textContent = 0;
 playerScore1.textContent = 0;
@@ -61,6 +61,8 @@ const switchPlayer = function() {
 
 // Action for rollDice button is clicked
 rollDice.addEventListener('click', function() {
+
+  if(isPlaying) {
   var randomNum = Math.floor(Math.random()*6)+1;
   dice.classList.remove('hidden');
   dice.src = diceImg[randomNum];
@@ -71,19 +73,30 @@ rollDice.addEventListener('click', function() {
   } else {
     switchPlayer();
   }
+}
 })
 
-
-// Hold Score
+// Hold and update Score
 holdScore.addEventListener('click', function() {
-  // Push the current score to total score
-   document.getElementById(`score--${activePlayer}`).textContent = currentScore;
+// IF no one win 
+  if(isPlaying) {
+  scores[activePlayer]+= currentScore;
+   document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
 
+   // IF player wins
+   if(scores[activePlayer] >= 50) {
+    isPlaying = false; // End the game
+    dice.classList.add('hidden'); // Remove the dice img
+    // ADD Black Background
+    document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+    // Remove active status
+    document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
+  } else {
+    switchPlayer();
+  }
 
-})
-
-
-
+}
+  });
 
 // Click the reset button 
 reset.addEventListener('click',startGame);
