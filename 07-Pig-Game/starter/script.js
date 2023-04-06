@@ -24,9 +24,9 @@ const diceImg = [
 
 // Start Game 
 const startGame = function() {
-scores = [0,0]; // store the total score of player1,2
+scores = [0,0]; // store the total score of player1,2 as an array
 currentScore = 0; 
-isPlaying = true; 
+isPlaying = true; // No one win at this point
 activePlayer = 0; // player1 start first by default
 
 playerScore0.textContent = 0;
@@ -54,7 +54,7 @@ const switchPlayer = function() {
   // If it's player 1 now, then switch to 2, else reverse
   activePlayer = activePlayer === 0?1:0;
 
-  // Add the class list if it's not there, remove if it's there
+  // Add the active class if it's not there, remove if it's there
   player0.classList.toggle('player--active');
   player1.classList.toggle('player--active');
 }
@@ -81,6 +81,7 @@ holdScore.addEventListener('click', function() {
 // IF no one win 
   if(isPlaying) {
   scores[activePlayer]+= currentScore;
+  // accessing the player using array index score[0]=player1, score[1]=player2
    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
 
    // IF player wins
